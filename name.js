@@ -11,10 +11,15 @@ function greet(a,b,c){
   var sumc = parseInt(c, 10);
   var asrc = (sumc/62) * 60;
   const total_num = Math.trunc(suma) + parseInt(b, 10) + Math.trunc(asrc);
-  document.getElementById("contain").innerText = "Your's total mark is"+ " "+ total_num+".";
+  //document.getElementById("contain").innerText = "Your's total mark is"+ " "+ total_num+".";
   //alert(sum);
   //document.write(sum);
   //document.write("hello"+firstname+""+secondname);
+  if(isNaN(total_num)){
+    document.querySelector("#contain").textContent = "The result is none."
+  } else {
+    document.querySelector("#contain").textContent = "Your's total mark is"+ " "+ total_num+".";
+  }
 }
 function isInputNumber(e) {
   var x = e.which || e.keycode;
